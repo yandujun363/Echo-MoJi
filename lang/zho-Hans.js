@@ -161,7 +161,7 @@ const lang_zho_Hans = {
                 },
                 random_method: {
                     _title: "消息随机方式",
-                    _description: "控制随机抽取消息的细节。<br>- 平均随机：每条消息的出现概率相同。<br>- 加权随机：每条消息的出现概率与其权重成正比，每次抽取将为所有未抽中的消息增加权重，抽中的消息重置权重。"
+                    _description: "控制随机抽取消息的细节。<br>- 平均随机：每条消息的出现概率相同。<br>- 加权随机：每条消息的出现概率与其权重成正比，每次抽取将为所有未抽中的消息增加权重，抽中的消息重置权重。 <br>- 顺序抽取：按消息在列表中的顺序依次抽取，抽完后重新开始。<br>- 逆序抽取：按消息在列表中的逆序依次抽取，抽完后重新开始。"
                 },
                 random_weight_init: {
                     _title: "随机权重初始值",
@@ -438,7 +438,9 @@ const lang_zho_Hans = {
     },
     random_method: {
         average: "平均随机",
-        weighted: "加权随机"
+        weighted: "加权随机",
+        sequential: "顺序抽取",
+        reverse: "逆序抽取"
     },
     settings: {
         unknown_config_type: "暂不支持修改此配置",

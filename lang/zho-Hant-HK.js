@@ -438,7 +438,9 @@ const lang_zho_Hant_HK = {
     },
     random_method: {
         average: "平均隨機",
-        weighted: "加權隨機"
+        weighted: "加權隨機",
+        sequential: "順序抽取",
+        reverse: "逆序抽取"
     },
     settings: {
         unknown_config_type: "暫不支持修改此配置",

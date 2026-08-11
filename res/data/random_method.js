@@ -6,5 +6,9 @@ echoLiveSystem.registry.loadRegistry('random_method', e => {
         value: 'average',
     }, {
         value: 'weighted',
+    }, {
+        value: 'sequential',
+    }, {
+        value: 'reverse',
     }
 ]);

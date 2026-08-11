@@ -139,6 +139,38 @@ class EchoMoJi {
     }
 
     /**
+     * 正序抽取（从第一个开始，每次取下一个）
+     * @returns {Number} 当前索引
+     */
+    sequentialIndex() {
+        if (this.messages.length === 0) return undefined;
+        if (this.messages.length === 1) return 0;
+
+        // 如果 lastIndex 未初始化或已是最后一个，从头开始
+        if (this.lastIndex === -1 || this.lastIndex >= this.messages.length - 1) {
+            return 0;
+        }
+
+        return this.lastIndex + 1;
+    }
+
+    /**
+     * 倒序抽取（从最后一个开始，每次取上一个）
+     * @returns {Number} 当前索引
+     */
+    reverseIndex() {
+        if (this.messages.length === 0) return undefined;
+        if (this.messages.length === 1) return 0;
+
+        // 如果 lastIndex 未初始化或已是第一个，从末尾开始
+        if (this.lastIndex === -1 || this.lastIndex <= 0) {
+            return this.messages.length - 1;
+        }
+
+        return this.lastIndex - 1;
+    }
+
+    /**
      * 随机索引
      * @returns {Number} 随机索引
      */
@@ -267,7 +299,9 @@ class EchoMoJi {
         let randomMethod = this.config.echomoji.message.random_method;
         const randomMethodMap = {
             average: 'randomIndex',
-            weighted: 'weightedRandomIndex'
+            weighted: 'weightedRandomIndex',
+            sequential: 'sequentialIndex',
+            reverse: 'reverseIndex'
         };
         if (randomMethodMap[this.config.echomoji.message.random_method] === undefined) randomMethod = 'randomIndex';
 
